@@ -1,68 +1,79 @@
 # Restaurant Ordering System
 
-The Restaurant Ordering System is a simple implementation of a restaurant ordering system using Python classes. It allows a customer to place an order at a restaurant, view their order history, and perform actions such as adding/removing items from the order, updating menu items, and managing the order history.
+This is a simple implementation of a restaurant ordering system. It consists of several classes that model various entities and their interactions within the system.
 
 ## Classes
 
 ### Restaurant
 
-The `Restaurant` class represents a restaurant and contains the following attributes:
+The `Restaurant` class represents a restaurant and has the following attributes:
 
 - `name`: The name of the restaurant.
 - `address`: The address of the restaurant.
 - `contact_info`: The contact information of the restaurant.
-- `menu`: A dictionary containing the menu items.
+- `menu`: An instance of the `Menu` class representing the menu of the restaurant.
 
-The `Restaurant` class provides methods to add, remove, update, and retrieve the menu.
+The `Restaurant` class provides methods to add, remove, and update the menu, as well as retrieve the current menu.
 
 ### Menu
 
-The `Menu` class represents a menu and contains the following attributes:
+The `Menu` class represents a menu and has the following attributes:
 
-- `items`: A dictionary containing the menu items.
+- `items`: A dictionary that stores `MenuItem` objects, where the keys are the names of the items.
 
-The `Menu` class provides methods to add, remove, update, and retrieve menu items.
+The `Menu` class provides methods to add, remove, and update items in the menu, as well as retrieve the current list of items.
 
 ### MenuItem
 
-The `MenuItem` class represents an item on the menu and contains the following attributes:
+The `MenuItem` class represents a single item on the menu and has the following attributes:
 
-- `name`: The name of the menu item.
-- `description`: The description of the menu item.
-- `price`: The price of the menu item.
+- `name`: The name of the item.
+- `description`: A description of the item.
+- `price`: The price of the item.
 
 ### Customer
 
-The `Customer` class represents a customer and contains the following attributes:
+The `Customer` class represents a customer and has the following attributes:
 
 - `name`: The name of the customer.
 - `address`: The address of the customer.
 - `contact_info`: The contact information of the customer.
-- `order_history`: A list containing the order history of the customer.
+- `order_history`: A list of `Order` objects representing the customer's order history.
 
-The `Customer` class provides methods to place an order at a restaurant, view order history, and perform actions such as adding/removing items from the order.
+The `Customer` class provides methods to place an order and view the order history.
 
 ### Order
 
-The `Order` class represents an order placed by a customer and contains the following attributes:
+The `Order` class represents an order placed by a customer and has the following attributes:
 
-- `customer`: The customer who placed the order.
-- `restaurant`: The restaurant where the order was placed.
-- `items`: A list of items ordered.
+- `customer`: The `Customer` object who placed the order.
+- `restaurant`: The `Restaurant` object from which the order was placed.
+- `items`: A list of `MenuItem` objects representing the items ordered.
 - `total_price`: The total price of the order.
 
-The `Order` class provides methods to add and remove items from the order and calculate the total price.
+The `Order` class provides methods to add and remove items from the order, as well as calculate the total price of the order.
 
 ### OrderHistory
 
-The `OrderHistory` class represents the history of orders placed by customers and contains the following attributes:
+The `OrderHistory` class is a utility class to manage a collection of orders. It has the following attributes:
 
-- `orders`: A list of orders.
+- `orders`: A list of `Order` objects representing the order history.
 
-The `OrderHistory` class provides methods to add, remove, and view orders.
+The `OrderHistory` class provides methods to add, remove, and view orders in the history.
 
-## Usage
+## Code Usage
 
-To use the Restaurant Ordering System, you can create instances of the `Restaurant`, `Menu`, `Customer`, and `Order` classes, and interact with their methods. The provided `main()` function demonstrates some sample usage scenarios, such as creating a restaurant, menu, customer, placing an order, updating menu items, removing menu items, and viewing order history.
+The `main()` function demonstrates the usage of the classes by creating instances of `Restaurant`, `Menu`, and `Customer`. It then performs the following actions:
 
-Please note that this implementation provides a basic structure for a restaurant ordering system and may not include all the necessary error handling and validation. You can further extend and customize the code to meet your specific requirements.
+1. Creates a restaurant and a menu, and adds items to the menu.
+2. Creates a customer and places an order by selecting items from the menu.
+3. Views the order history of the customer.
+4. Adds and removes items from the order.
+5. Updates a menu item.
+6. Removes a menu item.
+7. Views the updated menu.
+8. Views the order history again.
+9. Removes an order from the history.
+10. Views the updated order history.
+
+Please note that this implementation is a basic example and may require further refinement and enhancements based on specific requirements.
