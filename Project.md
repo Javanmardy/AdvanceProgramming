@@ -1,5 +1,3 @@
-Certainly! Here's the README file converted to Markdown format:
-
 ---
 # Restaurant Ordering System
 
