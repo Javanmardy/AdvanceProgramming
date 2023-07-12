@@ -1,4 +1,6 @@
-```markdown
+Certainly! Here's the README file converted to Markdown format:
+
+---
 # Restaurant Ordering System
 
 This is a simple implementation of a restaurant ordering system. It consists of several classes that model various entities and their interactions within the system.
@@ -230,9 +232,9 @@ def main():
         "Barbecue chicken, mushroom sauce with black peppercorns, special Parproc cheese",
         230050,
     )
-   
+    item2
 
- item2 = MenuItem(
+ = MenuItem(
         "Pizza Plus Margarita Jumbo Size",
         "A combination of 2 types of pizza including: 16 slices of window pizza (ham, sausage, mushrooms, bell pepper) and 9 slices of margarita",
         299000,
@@ -301,5 +303,6 @@ if __name__ == "__main__":
 ```
 
 Please note that this implementation is a basic example and may require further refinement and enhancements based on specific requirements.
-```
 
+---
+You can copy the above Markdown code and save it as `README.md` in your project directory or wherever you want to include the README file.
