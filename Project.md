@@ -66,7 +66,3 @@ The `OrderHistory` class provides methods to add, remove, and view orders.
 To use the Restaurant Ordering System, you can create instances of the `Restaurant`, `Menu`, `Customer`, and `Order` classes, and interact with their methods. The provided `main()` function demonstrates some sample usage scenarios, such as creating a restaurant, menu, customer, placing an order, updating menu items, removing menu items, and viewing order history.
 
 Please note that this implementation provides a basic structure for a restaurant ordering system and may not include all the necessary error handling and validation. You can further extend and customize the code to meet your specific requirements.
-
-## License
-
-This code is provided under the [MIT License](https://opensource.org/licenses/MIT). You are free to modify, distribute, and use the code for personal and commercial purposes.
