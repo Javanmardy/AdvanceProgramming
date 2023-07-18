@@ -7,15 +7,15 @@ DATABASE_FILE = "restaurant_management.json"
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, Restaurant):
-            return obj.__dict__
+        if isinstance(obj, Menu):
+            return obj.__dict__  # Convert Menu object to a dictionary
         elif isinstance(obj, MenuItem):
-            return obj.__dict__
+            return obj.__dict__  # Convert MenuItem object to a dictionary
         elif isinstance(obj, OrderHistory):
-            return obj.__dict__
-        elif isinstance(obj, Menu):
-            return obj.__dict__
-        return super().default(obj)
+            return obj.__dict__  # Convert OrderHistory object to a dictionary
+        elif isinstance(obj, Restaurant):
+            return obj.__dict__  # Convert Restaurant object to a dictionary
+        return json.JSONEncoder.default(self, obj)
 
 
 def save_data(data):
@@ -25,17 +25,14 @@ def save_data(data):
 
 def load_data():
     try:
-        with open("data.json", "r") as file:
-            data = json.load(file)
-            if "customers" not in data:
-                data[
-                    "customers"
-                ] = (
-                    []
-                )  # Provide a default empty list for customers if the key is missing
-            return data
+        with open(FILENAME, "r") as file:
+            data = json.loads(file.read())
     except (FileNotFoundError, json.JSONDecodeError):
-        return {"restaurants": [], "customers": []}
+        data = {
+            "restaurants": [],  # Provide a default empty list for restaurants
+            "customers": [],  # Provide a default empty list for customers
+        }
+    return data
 
 
 def search_restaurants_by_contact_info(data, contact_info):
@@ -140,6 +137,18 @@ def get_non_empty_string_input(prompt):
             return value
 
 
+def add_restaurant(restaurants):
+    # ... Rest of the code ...
+
+    # Create a new Restaurant object
+    new_restaurant = Restaurant(name, contact_info, location, menu)
+
+    # Append the new restaurant to the list
+    restaurants.append(new_restaurant)
+
+    # ... Rest of the code ...
+
+
 class Restaurant:
     def __init__(self, name, address, contact_info):
         self.name = name
@@ -175,6 +184,10 @@ class Restaurant:
 class Menu:
     def __init__(self):
         self.items = {}
+
+    def __str__(self):
+        items_str = "\n".join(str(item) for item in self.items)  # Fix the line
+        return f"Menu:\n{items_str}"
 
     def add_item(self, item):
         try:
@@ -342,11 +355,12 @@ class OrderHistory:
 
 
 def main(data):
-    restaurants = data["restaurants"]
-    selected_restaurant = None
-    customer = None
-    data = load_data()
-    customers = data.get("customers", [])
+    if data:
+        restaurants = data.get("restaurants", [])  # Provide a default empty list
+        customers = data.get("customers", [])  # Provide a default empty list
+    else:
+        restaurants = []
+        customers = []
     while True:
         print(Fore.CYAN + "In which section do you need changes?")
         print(Fore.GREEN + "1- Restaurant")
