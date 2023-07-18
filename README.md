@@ -1,4 +1,29 @@
-Apologies for the misunderstanding. Below is a more detailed line-by-line explanation of the code:
+# Restaurant Management System - README
+
+This is a Python command-line application for a basic restaurant management system. The application allows users to interact with the system as either a "Restaurant" or a "Customer" to perform various actions related to managing the restaurant menu and placing orders.
+
+## Getting Started
+
+To run the restaurant management system, you need Python 3.x installed on your machine. Clone this repository and navigate to the project's root directory in your terminal.
+
+**Requirements:**
+- Python 3.x
+- colorama (install using `pip install colorama`)
+
+## File Structure
+
+- `restaurant_management.py`: The main Python script containing the implementation of the restaurant management system.
+- `README.md`: This README file explaining the project and its usage.
+
+## Usage
+
+Run the `restaurant_management.py` script using the following command in your terminal:
+
+```
+python restaurant_management.py
+```
+
+## Classes and Methods
 
 ```python
 from colorama import Fore, Style, init
@@ -412,7 +437,11 @@ elif choice == 2:
 ```
 - Within the `main()` function, when the user chooses option 2 (Customer section), it checks if the user is logged in as a customer or not. If not logged in, it handles customer login/registration. If logged in, it enters a nested loop where it displays a menu for customer-specific actions. The user can find nearby restaurants, place orders, view order history, or log out.
 
-Please note that the detailed code for handling specific interactions in each section (Restaurant and Customer) was not provided in the original code. The code blocks labeled with comments (e.g., `# ... (Code for restaurant login/registration)`) indicate that the actual implementation for those specific actions is missing and should be filled in based on the intended functionality.
+## Contributing
 
-As the owner of the project, you can continue building on the existing code by completing the missing parts and adding new features to make the ordering system more comprehensive and user-friendly.
+This project is currently maintained by Amirhosein Javanmardy. If you find any issues or have suggestions for improvements, feel free to create a pull request or submit an issue in the repository.
+
+## Acknowledgments
+
+Thanks to the professors of Khatam University and my friends who accompanied me in this project.
 پ
