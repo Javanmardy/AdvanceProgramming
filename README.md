@@ -1,4 +1,4 @@
-# Restaurant Management System - README
+# Restaurant Management System 
 
 This is a Python command-line application for a basic restaurant management system. The application allows users to interact with the system as either a "Restaurant" or a "Customer" to perform various actions related to managing the restaurant menu and placing orders.
 
